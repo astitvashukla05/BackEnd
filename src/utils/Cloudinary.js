@@ -22,7 +22,7 @@ import fs from "fs"
         }
 
     }
-    export default {uploadOnCloudinary};
+    export default uploadOnCloudinary;
     //  const uploadResult = await cloudinary.uploader
     //    .upload(
     //        'https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg', {
