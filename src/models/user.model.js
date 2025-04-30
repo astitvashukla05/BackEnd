@@ -50,11 +50,13 @@ const userSchema= new Schema({
     }
 
 },{timestamps:true})
+//Encrypting the password
 userSchema.pre("save",async function(next){
     if(!this.isModified("password")) return next();
     this.password= await bcrypt.hash(this.password,10)
     next()
 })
+h
 userSchema.methods.isPasswordCorrect=async function(){
     return await bcrypt.compare("password",this.password)
 }
