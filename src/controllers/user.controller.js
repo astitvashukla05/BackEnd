@@ -63,10 +63,10 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(500, "User Failed To Register");
   }
   // Returing Response
-  res.send("Saved Your Data")
-  // return res
-  //   .status(200)
-  //   .json(new ApiRes(200, createUser, "User Registered success"));
+  // res.send("Saved Your Data")
+  return res
+    .status(200)
+    .json(new ApiRes(200, createUser, "User Registered success"));
  });
 
 export default registerUser;
