@@ -1,1 +1,2 @@
-export const DB_NAME="youtube"
+const DB_NAME="youtube"
+export default DB_NAME
