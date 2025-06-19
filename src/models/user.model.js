@@ -50,6 +50,10 @@ const userSchema= new Schema({
     }
 
 },{timestamps:true})
+<<<<<<< HEAD
+=======
+
+>>>>>>> 081ce2f (Fixed Issues and Modified overall code)
 //Encrypting the password
 userSchema.pre("save",async function(next){
     if(!this.isModified("password")) return next();
@@ -57,6 +61,7 @@ userSchema.pre("save",async function(next){
     next()
 })
 
+<<<<<<< HEAD
 userSchema.methods.isPasswordCorrect=async function(){
     return await bcrypt.compare("password",this.password)
 }
@@ -66,6 +71,17 @@ userSchema.methods.generateAccessToken=function(){
         email:this.email,
         username:this.username,
         fullname:this.fullname
+=======
+userSchema.methods.isPasswordCorrect=async function(password){
+    return await bcrypt.compare(password,this.password)
+}
+userSchema.methods.generateAccessToken=function(){
+   return  jwt.sign({
+        _id:this._id,
+        email:this.email,
+        userName:this.userName,
+        fullName:this.fullName
+>>>>>>> 081ce2f (Fixed Issues and Modified overall code)
     
     },
     process.env.ACCESS_TOKEN_SECRET,
@@ -75,10 +91,16 @@ userSchema.methods.generateAccessToken=function(){
 )
 }
 userSchema.methods.generateRefreshToken=function(){
+<<<<<<< HEAD
     jwt.sign({
         _id:this._id,
        
     
+=======
+   return jwt.sign({
+        _id:this._id,
+        
+>>>>>>> 081ce2f (Fixed Issues and Modified overall code)
     },
     process.env.REFRESH_TOKEN_SECRET,
     {

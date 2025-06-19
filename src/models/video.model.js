@@ -2,7 +2,11 @@ import mongoose,{Schema,model} from "mongoose";
 import mongooseAggregatePaginate  from "mongoose-aggregate-paginate-v2";
 const videoSchema=new Schema({
     videoFile:{
+<<<<<<< HEAD
         type:String,
+=======
+        type:String, //Cloudinary
+>>>>>>> 081ce2f (Fixed Issues and Modified overall code)
         required:true, 
     },
     thumbnail:{
@@ -21,7 +25,11 @@ const videoSchema=new Schema({
 
     },
     duration:{
+<<<<<<< HEAD
         type:Number, //Cloudi
+=======
+        type:Number, //Cloudinary
+>>>>>>> 081ce2f (Fixed Issues and Modified overall code)
         required:true,
     },
     view:{
